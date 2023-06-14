@@ -3,7 +3,7 @@ import express, { NextFunction, Request, Response } from 'npm:express';
 import demoData from './data_blob.json' assert { type: 'json' };
 
 const app = express();
-const port: number = Number(Deno.env.get('APP_PORT')) || 3000;
+const port = Number(Deno.env.get('PORT')) || 3000;
 
 app.use(function reqLogger(req: Request, res: Response, next: NextFunction): void {
 	console.log(`${req.method} request to ${req.url} by ${req.hostname}`);

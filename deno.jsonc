@@ -1,7 +1,11 @@
 {
 	"tasks": {
-		"dev": "deno run -A --watch --node-modules-dir main.ts"
+		"dev": "deno run --allow-read --allow-net --allow-env --watch --node-modules-dir main.ts",
+		"start": "deno run --allow-read --allow-net --allow-env main.ts"
 	},
+	"include": [
+		"./*.ts"
+	],
 	"exclude": [
 		"node_modules/**"
 	],

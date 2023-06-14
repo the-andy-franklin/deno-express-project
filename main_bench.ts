@@ -1,9 +1,9 @@
-import { add } from "./main.ts";
+const stagingUrl = Deno.env.get('STAGING_URL') || 'http://localhost:3000';
 
-Deno.bench(function addSmall() {
-  add(1, 2);
+Deno.bench('All Users', async () => {
+	await fetch(`${stagingUrl}/users`);
 });
 
-Deno.bench(function addBig() {
-  add(2 ** 32, 2 ** 32);
+Deno.bench('Single User', async () => {
+	await fetch(`${stagingUrl}/users/1`);
 });
